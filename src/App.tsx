@@ -4,6 +4,7 @@ import './App.css'
 import { Activity, useState } from 'react'
 import Counter from './Counter'
 import { fileSystemData } from './data'
+import Live from './Live'
 import { Tree } from './Tree'
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Activity mode={view === 'tree' ? 'visible' : 'hidden'}>
           <h2>File System Tree</h2>
           <Tree data={fileSystemData} />
+          <Live />
         </Activity>
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
