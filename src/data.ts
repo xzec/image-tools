@@ -1,9 +1,9 @@
 export interface FileSystemItem {
-  id: string;
-  name: string;
-  type: 'file' | 'folder';
-  size: number;
-  children?: FileSystemItem[];
+  id: string
+  name: string
+  type: 'file' | 'folder'
+  size: number
+  children?: FileSystemItem[]
 }
 
 export const fileSystemData: FileSystemItem[] = [
@@ -73,4 +73,4 @@ export const fileSystemData: FileSystemItem[] = [
     type: 'file',
     size: 928,
   },
-];
+]

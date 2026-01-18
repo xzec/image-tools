@@ -1,30 +1,31 @@
-import React, { useState } from 'react';
-import type { FileSystemItem } from './data';
+import type React from 'react'
+import { useState } from 'react'
+import type { FileSystemItem } from './data'
 
 interface ItemProps {
-  item: FileSystemItem;
+  item: FileSystemItem
 }
 
 export const Item: React.FC<ItemProps> = ({ item }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const hasChildren = item.children && item.children.length > 0;
+  const [isOpen, setIsOpen] = useState(false)
+  const hasChildren = item.children && item.children.length > 0
 
   const toggleOpen = () => {
     if (hasChildren) {
-      setIsOpen(!isOpen);
+      setIsOpen(!isOpen)
     }
-  };
+  }
 
   return (
     <div style={{ marginLeft: '20px', textAlign: 'left' }}>
-      <div 
-        onClick={toggleOpen} 
-        style={{ 
+      <div
+        onClick={toggleOpen}
+        style={{
           cursor: hasChildren ? 'pointer' : 'default',
           fontWeight: hasChildren ? 'bold' : 'normal',
           display: 'flex',
           alignItems: 'center',
-          gap: '5px'
+          gap: '5px',
         }}
       >
         <span>{item.type === 'folder' ? (isOpen ? '📂' : '📁') : '📄'}</span>
@@ -38,11 +39,11 @@ export const Item: React.FC<ItemProps> = ({ item }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
 interface TreeProps {
-  data: FileSystemItem[];
+  data: FileSystemItem[]
 }
 
 export const Tree: React.FC<TreeProps> = ({ data }) => {
@@ -52,5 +53,5 @@ export const Tree: React.FC<TreeProps> = ({ data }) => {
         <Item key={item.id} item={item} />
       ))}
     </div>
-  );
-};
+  )
+}
