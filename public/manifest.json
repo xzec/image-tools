@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Image Controls",
+  "version": "0.0.1",
+  "description": "Custom controls for standalone image tabs",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*.png",
+        "*://*/*.jpg",
+        "*://*/*.jpeg",
+        "*://*/*.webp",
+        "*://*/*.gif",
+        "*://*/*.bmp",
+        "*://*/*.avif"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "host_permissions": ["*://*/*"]
+}
