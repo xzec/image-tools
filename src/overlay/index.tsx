@@ -3,17 +3,19 @@ import { createRoot } from 'react-dom/client'
 import { Controls } from './Controls.tsx'
 
 const host = document.createElement('div')
-host.id = 'my-extension-host'
+host.id = 'image-tools'
+host.style.width = '100%'
+host.style.height = '100%'
+host.style.display = 'grid'
+host.style.placeItems = 'center'
+document.querySelector('img')!.replaceWith(host)
 
-document.body.appendChild(host)
 document.body.style.overflow = 'hidden'
-
-const img = document.querySelector('img')!
 
 const shadowRoot = host.attachShadow({ mode: 'open' })
 
 createRoot(shadowRoot).render(
   <StrictMode>
-    <Controls img={img} />
+    <Controls />
   </StrictMode>,
 )
