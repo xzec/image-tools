@@ -10,7 +10,7 @@ export default function Image() {
 
   useHotkeys('right', () => setRotation((prev) => (prev + 90) % 360))
   useHotkeys('left', () => setRotation((prev) => (prev - 90) % 360))
-  useHotkeys('alt+k', eyeDrop, { enabled: isSupported })
+  useHotkeys('meta+i', eyeDrop, { enabled: isSupported })
 
   return (
     <img

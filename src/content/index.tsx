@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import History from '~/content/History'
 import Image from '~/content/Image'
 
 const host = document.createElement('div')
@@ -17,5 +18,6 @@ const shadowRoot = host.attachShadow({ mode: 'open' })
 createRoot(shadowRoot).render(
   <StrictMode>
     <Image />
+    <History />
   </StrictMode>,
 )
