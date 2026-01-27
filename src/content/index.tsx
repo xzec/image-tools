@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { Image } from './Image.tsx'
+import Image from '~/content/Image'
 
 const host = document.createElement('div')
 host.id = 'image-tools'

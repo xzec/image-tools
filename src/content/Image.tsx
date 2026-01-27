@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react'
 import { useHotkeys } from 'react-hotkeys-hook'
-import { useEyeDropper } from './useEyeDropper'
+import { useEyeDropper } from '~/content/useEyeDropper'
 
-export function Image() {
+export default function Image() {
   const imgRef = useRef<HTMLImageElement | null>(null)
   const [isFittedToViewPort, setIsFittedToViewPort] = useState(false)
   const [rotation, setRotation] = useState(0)
