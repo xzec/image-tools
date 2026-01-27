@@ -5,7 +5,7 @@ import './index.css'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <div>
-      <h1>Image Tools</h1>
+      <h1>Image Tools - Popup</h1>
     </div>
   </StrictMode>,
 )

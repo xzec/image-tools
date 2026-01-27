@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { Controls } from './Controls.tsx'
+import { Image } from './Image.tsx'
 
 const host = document.createElement('div')
 host.id = 'image-tools'
@@ -16,6 +16,6 @@ const shadowRoot = host.attachShadow({ mode: 'open' })
 
 createRoot(shadowRoot).render(
   <StrictMode>
-    <Controls />
+    <Image />
   </StrictMode>,
 )

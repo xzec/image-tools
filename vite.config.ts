@@ -8,7 +8,7 @@ export default defineConfig({
     rolldownOptions: {
       input: {
         // popup: path.resolve(__dirname, 'popup.html'),
-        content: path.resolve(__dirname, 'src/overlay/index.tsx'),
+        content: path.resolve(__dirname, 'src/content/index.tsx'),
       },
       output: {
         entryFileNames: '[name].js',
