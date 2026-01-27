@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { useHotkeys } from 'react-hotkeys-hook'
+import { cn } from '~/content/cn.ts'
 import { useEyeDropper } from '~/content/useEyeDropper'
 
 export default function Image() {
@@ -17,12 +18,12 @@ export default function Image() {
       ref={imgRef}
       src={location.href}
       onClick={() => setIsFittedToViewPort((prev) => !prev)}
+      className={cn(
+        'user-select-none m-auto object-contain',
+        isFittedToViewPort ? '100dvw' : 'initial',
+        isFittedToViewPort ? '100dvh' : 'initial',
+      )}
       style={{
-        userSelect: 'none',
-        margin: 'auto',
-        objectFit: 'contain',
-        width: isFittedToViewPort ? '100dvw' : 'initial',
-        height: isFittedToViewPort ? '100dvh' : 'initial',
         transform: `rotate(${rotation}deg)`,
       }}
     />

@@ -9,24 +9,8 @@ export default function History() {
 
   return (
     <Activity mode={open ? 'visible' : 'hidden'}>
-      <div
-        style={{
-          display: 'grid',
-          position: 'fixed',
-          width: '100vw',
-          height: '100vw',
-          placeItems: 'center',
-          backdropFilter: 'brightness(40%)',
-        }}
-      >
-        <div
-          style={{
-            zIndex: 1000,
-            background: 'red',
-          }}
-        >
-          history
-        </div>
+      <div className="fixed grid h-full w-full place-items-center text-white backdrop-brightness-50">
+        <div className="z-50">history</div>
       </div>
     </Activity>
   )
