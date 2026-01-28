@@ -18,11 +18,7 @@ export default function Image() {
       ref={imgRef}
       src={location.href}
       onClick={() => setIsFittedToViewPort((prev) => !prev)}
-      className={cn(
-        'user-select-none m-auto object-contain',
-        isFittedToViewPort ? '100dvw' : 'initial',
-        isFittedToViewPort ? '100dvh' : 'initial',
-      )}
+      className={cn('user-select-none m-auto object-contain', { 'h-dvh w-dvw': isFittedToViewPort })}
       style={{
         transform: `rotate(${rotation}deg)`,
       }}
