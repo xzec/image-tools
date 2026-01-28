@@ -7,7 +7,7 @@ interface ColorPick {
 
 async function persistPick(pick: ColorPick) {
   const key = 'picks'
-  const res = await chrome.storage.local.get<{ picks: { picks: ColorPick[] } }>(key)
+  const res = await chrome.storage.local.get<{ picks: ColorPick[] }>(key)
   const picks: ColorPick[] = Array.isArray(res.picks) ? res.picks : []
   const picksCopy = picks.slice(-10)
   console.table(picksCopy)
@@ -24,11 +24,13 @@ export function useEyeDropper() {
     try {
       const eyeDropper = new window.EyeDropper()
       const result = await eyeDropper.open()
-      console.log(result.sRGBHex)
-      await navigator.clipboard.writeText(result.sRGBHex)
-      await persistPick({ href: location.href, sRGBHex: result.sRGBHex })
+
+      await Promise.all([
+        navigator.clipboard.writeText(result.sRGBHex),
+        persistPick({ href: location.href, sRGBHex: result.sRGBHex }),
+      ])
     } catch (error) {
-      if ((error as DOMException)?.name !== 'AbortError') console.error('EyeDropper failed', error)
+      if ((error as DOMException).name !== 'AbortError') console.error('EyeDropper failed', error)
     }
   }, [isSupported])
 
