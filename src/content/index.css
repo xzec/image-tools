@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@layer base {
+  * {
+    overscroll-behavior: none;
+  }
+
+  a {
+    @apply text-blue-200 hover:underline;
+  }
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+}

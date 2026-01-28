@@ -1,8 +1,9 @@
 import { useCallback, useMemo } from 'react'
 
-interface ColorPick {
+export interface ColorPick {
   href: string
   sRGBHex: string
+  ts: number
 }
 
 async function persistPick(pick: ColorPick) {
@@ -27,7 +28,7 @@ export function useEyeDropper() {
 
       await Promise.all([
         navigator.clipboard.writeText(result.sRGBHex),
-        persistPick({ href: location.href, sRGBHex: result.sRGBHex }),
+        persistPick({ href: location.href, sRGBHex: result.sRGBHex, ts: Date.now() }),
       ])
     } catch (error) {
       if ((error as DOMException).name !== 'AbortError') console.error('EyeDropper failed', error)

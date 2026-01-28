@@ -5,7 +5,7 @@ import Image from '~/content/Image'
 import '~/content/index.css'
 
 document.body.removeChild(document.querySelector('img')!)
-document.body.style.overflow = 'hidden'
+document.documentElement.classList.add('scrollbar-none')
 
 createRoot(document.body).render(
   <StrictMode>
